@@ -14,6 +14,7 @@ spec:
     spec:
       containers:
       - name: demo-app
-        image: quay.io/redhattraining/hello-world-nginx
+        image: image-registry.openshift-image-registry.svc:5000/demo-app/flask-demo:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
