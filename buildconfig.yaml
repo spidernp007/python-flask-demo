@@ -1,0 +1,20 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: flask-demo
+spec:
+  source:
+    type: Git
+    git:
+      uri: https://github.com/spidernp007/python-flask-demo.git
+
+  strategy:
+    dockerStrategy: {}
+
+  output:
+    to:
+      kind: ImageStreamTag
+      name: flask-demo:latest
+
+  triggers:
+  - type: ConfigChange
